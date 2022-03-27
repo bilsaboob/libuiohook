@@ -89,6 +89,7 @@ typedef struct _keyboard_event_data {
     uint16_t keycode;
     uint16_t rawcode;
     uint16_t keychar;
+    uint16_t flags;
 } keyboard_event_data,
   key_pressed_event_data,
   key_released_event_data,

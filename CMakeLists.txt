@@ -250,10 +250,6 @@ elseif(APPLE)
         target_include_directories(uiohook PRIVATE "${APPKIT}")
         target_link_libraries(uiohook "${APPKIT}")
     endif()
-elseif(WIN32)
-    find_library(ADVAPI32 Advapi32)
-    target_include_directories(uiohook PRIVATE "${ADVAPI32}")
-    target_link_libraries(uiohook "${ADVAPI32}")
 endif()
 
 
