@@ -258,6 +258,7 @@ static void process_key_pressed(KBDLLHOOKSTRUCT *kbhook) {
     event.data.keyboard.keycode = keycode_to_scancode(kbhook->vkCode, kbhook->flags);
     event.data.keyboard.rawcode = (uint16_t) kbhook->vkCode;
     event.data.keyboard.keychar = CHAR_UNDEFINED;
+    event.data.keyboard.flags = (uint16_t) kbhook->flags
 
     logger(LOG_LEVEL_DEBUG, "%s [%u]: Key %#X pressed. (%#X)\n",
             __FUNCTION__, __LINE__, event.data.keyboard.keycode, event.data.keyboard.rawcode);
@@ -323,6 +324,7 @@ static void process_key_released(KBDLLHOOKSTRUCT *kbhook) {
     event.data.keyboard.keycode = keycode_to_scancode(kbhook->vkCode, kbhook->flags);
     event.data.keyboard.rawcode = (uint16_t) kbhook->vkCode;
     event.data.keyboard.keychar = CHAR_UNDEFINED;
+    event.data.keyboard.flags = (uint16_t) kbhook->flags
 
     logger(LOG_LEVEL_DEBUG, "%s [%u]: Key %#X released. (%#X)\n",
             __FUNCTION__, __LINE__, event.data.keyboard.keycode, event.data.keyboard.rawcode);
